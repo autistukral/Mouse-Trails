@@ -97,7 +97,7 @@ namespace Mouse_Trails
             {
                 return 4;
             }
-            return 0;
+            return 2;
         }
 
         private void CustomComboBox()
