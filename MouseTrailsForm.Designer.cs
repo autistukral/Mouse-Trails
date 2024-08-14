@@ -95,6 +95,8 @@
             // 
             // contextMenuStrip
             // 
+            contextMenuStrip.BackColor = Color.FromArgb(36, 38, 49);
+            contextMenuStrip.ForeColor = Color.White;
             contextMenuStrip.Items.AddRange(new ToolStripItem[] { runOnStartupToolStripMenuItem, showToolStripMenuItem, exitToolStripMenuItem });
             contextMenuStrip.Name = "contextMenuStrip";
             contextMenuStrip.Size = new Size(154, 70);
