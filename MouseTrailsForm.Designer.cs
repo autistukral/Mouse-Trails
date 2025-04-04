@@ -39,6 +39,8 @@
             runOnStartupToolStripMenuItem = new ToolStripMenuItem();
             showToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
+            setTrailsOffToolStrip = new ToolStripMenuItem();
+            setTrails100ToolStrip = new ToolStripMenuItem();
             currentTrailsLabel = new Label();
             currentTrailsUpdateLabel = new Label();
             autoApplyButton = new Button();
@@ -97,30 +99,44 @@
             // 
             contextMenuStrip.BackColor = Color.FromArgb(36, 38, 49);
             contextMenuStrip.ForeColor = Color.White;
-            contextMenuStrip.Items.AddRange(new ToolStripItem[] { runOnStartupToolStripMenuItem, showToolStripMenuItem, exitToolStripMenuItem });
+            contextMenuStrip.Items.AddRange(new ToolStripItem[] { runOnStartupToolStripMenuItem, setTrailsOffToolStrip, setTrails100ToolStrip, showToolStripMenuItem, exitToolStripMenuItem });
             contextMenuStrip.Name = "contextMenuStrip";
-            contextMenuStrip.Size = new Size(154, 70);
+            contextMenuStrip.Size = new Size(181, 136);
             // 
             // runOnStartupToolStripMenuItem
             // 
             runOnStartupToolStripMenuItem.Name = "runOnStartupToolStripMenuItem";
-            runOnStartupToolStripMenuItem.Size = new Size(153, 22);
+            runOnStartupToolStripMenuItem.Size = new Size(180, 22);
             runOnStartupToolStripMenuItem.Text = "Run on Startup";
             runOnStartupToolStripMenuItem.Click += runOnStartupToolStripMenuItem_Click;
             // 
             // showToolStripMenuItem
             // 
             showToolStripMenuItem.Name = "showToolStripMenuItem";
-            showToolStripMenuItem.Size = new Size(153, 22);
+            showToolStripMenuItem.Size = new Size(180, 22);
             showToolStripMenuItem.Text = "Show";
             showToolStripMenuItem.Click += showToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(153, 22);
+            exitToolStripMenuItem.Size = new Size(180, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
+            // setTrailsOffToolStrip
+            // 
+            setTrailsOffToolStrip.Name = "setTrailsOffToolStrip";
+            setTrailsOffToolStrip.Size = new Size(180, 22);
+            setTrailsOffToolStrip.Text = "Set Trails: 0 (Off)";
+            setTrailsOffToolStrip.Click += setTrailsOffToolStrip_Click;
+            // 
+            // setTrails100ToolStrip
+            // 
+            setTrails100ToolStrip.Name = "setTrails100ToolStrip";
+            setTrails100ToolStrip.Size = new Size(180, 22);
+            setTrails100ToolStrip.Text = "Set Trails: 100";
+            setTrails100ToolStrip.Click += setTrails100ToolStrip_Click;
             // 
             // currentTrailsLabel
             // 
@@ -222,5 +238,7 @@
         private Button autoApplyButton;
         private Label updateRateLabel;
         private ComboBox updateRateCB;
+        private ToolStripMenuItem setTrailsOffToolStrip;
+        private ToolStripMenuItem setTrails100ToolStrip;
     }
 }

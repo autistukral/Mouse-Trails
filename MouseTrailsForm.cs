@@ -169,10 +169,6 @@ namespace Mouse_Trails
             updateRateCB.DrawItem += new DrawItemEventHandler(trailsCountCB_DrawItem);
         }
 
-        private void updateRateCB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
         private void trailsCountCB_DrawItem(object sender, DrawItemEventArgs e)
         {
             // Check if the item index is valid
@@ -229,6 +225,15 @@ namespace Mouse_Trails
             updateTimer.Start();
         }
 
+        private void ShowForm()
+        {
+            this.ShowInTaskbar = true;
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+            this.BringToFront();
+            this.Activate();
+        }
+
         private void UpdateTimer_Tick(object sender, EventArgs e)
         {
             UpdateTrayText();
@@ -268,7 +273,7 @@ namespace Mouse_Trails
         private void AutoApplyToggle()
         {
             autoApplyButton.Text = isAutoUpdateEnabled ? "Disable\nAuto Update" : "Enable\nAuto Update";
-            autoApplyButton.BackColor = isAutoUpdateEnabled ? Color.FromArgb(160,0,40) : Color.FromArgb(0,160,40);
+            autoApplyButton.BackColor = isAutoUpdateEnabled ? Color.FromArgb(160, 0, 40) : Color.FromArgb(0, 160, 40);
         }
 
         private void SaveAutoApplyRegistry(bool state)
@@ -451,9 +456,7 @@ namespace Mouse_Trails
 
         private void notifyIcon_MouseDoubleClick(object sender, EventArgs e)
         {
-            this.Show(); // Show the form
-            this.WindowState = FormWindowState.Normal; // Restore the window state
-            notifyIcon.Visible = true; // Hide the NotifyIcon
+            ShowForm();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -465,9 +468,7 @@ namespace Mouse_Trails
 
         private void showToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Show();
-            this.WindowState = FormWindowState.Normal;
-            notifyIcon.Visible = true;
+            ShowForm();
         }
 
         private void runOnStartupToolStripMenuItem_Click(object sender, EventArgs e)
@@ -505,5 +506,20 @@ namespace Mouse_Trails
             return key.GetValue(appName) != null;
         }
 
+        private void setTrailsOffToolStrip_Click(object sender, EventArgs e)
+        {
+            int selectedValue = 0;
+            SetMouseTrails(selectedValue);
+            SaveTrailCountRegistry(selectedValue);
+            UpdateTrayText();
+        }
+
+        private void setTrails100ToolStrip_Click(object sender, EventArgs e)
+        {
+            int selectedValue = 100;
+            SetMouseTrails(selectedValue);
+            SaveTrailCountRegistry(selectedValue);
+            UpdateTrayText();
+        }
     }
 }
