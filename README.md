@@ -2,4 +2,8 @@ Simple app that let's you change the mouse trail count (up to a value of 100) so
 
 You can also set an auto update on a customizable timer so that the app checks if the trail cout was changed and sets it back to a value defined by you.
 
-This app has Start on startup option.
+![App Screenshot](resources/mt-app.png)
+
+This app has Start on startup and quick set option in the System Tray Strip Menu.
+
+![Strip Menu Screenshot](resources/mt-strip.png)
